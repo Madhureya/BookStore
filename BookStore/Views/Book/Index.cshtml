@@ -1,0 +1,81 @@
+﻿@model IEnumerable<BookStore.Models.Book>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style >
+ body{
+        background-color: khaki;
+ }
+ 
+</style>
+
+
+
+   
+    
+
+<h1>BookStore</h1>
+<div><marquee>************************************************** Welcome to my BookStore **************************************************</marquee></div>
+
+<p>
+    <a asp-action="Create" Class="btn btn-outline-dark">Create New Book</a>
+</p>
+
+<div id="Search">
+
+<form asp-action="Search">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
+            <input type="search" name="searchString" class="form-control" placeholder="Enter BookName or Genere"/>
+        </div>
+        <div class="col-md-1">
+            <input type="submit" value="Search" class="btn btn-warning"/>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</form>
+</div>
+
+<br />
+
+
+       
+        <div class="container-fluid">
+ 
+         <div class="row">
+
+            
+        @foreach (var item in Model)
+
+        {
+          <br /> 
+        <div class="col-sm-3" style="background-color:lavender; offset-2 a">
+
+       <p><img class="cen"src="/images/@item.bookimg" width="200px" height="200px" />        
+        <div><b> @Html.DisplayFor(modelItem => item.Name) </b></div>
+        <div> Genre:  @Html.DisplayFor(modelItem => item.Zoner)</div>
+        <div>  Cost: @Html.DisplayFor(modelItem => item.Cost)</div>
+        <div> ReleaseDate:  @Html.DisplayFor(modelItem => item.ReleaseDate) </div> </p>
+
+
+         <div> <a href="@Url.Action("Edit", new{item.Id, item.Name, item.Zoner, item.ReleaseDate, item.Cost})" type="button" class="btn btn-info">Edit</a>
+       <a asp-action="Details" asp-route-Id="@item.Id" class="btn btn-success">Details </a> 
+         <a asp-action="Delete" asp-route-Id=@item.Id class="btn btn-danger">Delete</a> </div>
+       
+        </div>
+        
+        }
+        <br />
+        
+        </div>
+        </div>
+        
+        
+                 
+        
+        
+
+               

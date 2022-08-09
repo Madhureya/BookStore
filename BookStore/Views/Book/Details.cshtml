@@ -1,0 +1,35 @@
+﻿@model BookStore.Models.Book
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style >
+ body{
+        background-color:Khaki;
+ }
+ 
+</style>
+<h1 style="color:black"> Book Details</h1>
+
+<div style="color:black">
+  
+    <hr />
+    <div class="row container">
+        <div class="col-md-5">
+            <img src="/Images/Canterville.jpg" height="350px" width="250px"/>
+            
+
+        </div>
+        <div class="col-md-7" style="padding-bottom:20px">
+              <span  style="font-size:50px" >Canterville Ghost</span><br />
+            <span class="fst-italic" style="font-size:25px"><strong style="font-size:30px">Description:</strong>Oscar Wilde in his play 'The Canterville Ghost' has brought home to his readers two important question that every thinking person broods over, i.e. What life is? and 'What death signifies?' Apart from these profound answers, comes an important realization that 'love is stronger than both'.</span>
+        <br />
+        <br />
+        <a asp-action="Index" class="btn btn-outline-primary">Back to List</a>
+        <a asp-action="AddCart" asp-controller="Book" class="btn btn-outline-primary">Add Cart</a>
+        </div>
+        </div>
+        </div>
+   
+        </div>
